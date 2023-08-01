@@ -1,0 +1,21 @@
+old php fetch data to table code:
+
+<?php
+    $sql = "SELECT * FROM `data_storage` WHERE 'username'='$username'";
+    $result = mysqli_query($con,$sql);
+    while($row = mysqli_fetch_assoc($result)){
+        ?>
+            <tr>
+            <td><?php echo $row['id'] ?></td>
+            <td><?php echo $row['book_name'] ?></td>
+            <td><?php echo $row['book_category'] ?></td>
+            <!-- php echo $row['book_cover']   -->
+            <td>
+                <a href="edit.php?id=<?php echo $row['id'] ?>" class="link-dark"><i class="bi-pencil-square"></i></a>
+                <a href="delete.php?id=<?php echo $row['id'] ?>" class="link-dark ml-3"><i class="bi-trash-fill"></i></a>
+             </td>
+            </tr>
+        <?php 
+
+    }
+    ?>

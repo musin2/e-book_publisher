@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+
+  <!--Bootstrap properties and css styles-->
+    <title>E-book Bublisher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" type="image" href="images/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+
+    <!--fin-->
+   </head>
+
+   <body>
+
+    <!--Navigation bar-->
+    <!--<img class="navbrand" src="images/logo.png" alt="logo" style="width:80px; height: 90px;"> -->
+    <nav class="navbar navbar-custom navbar-expand-md navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+
+
+          <a class="navbar-brand" href="index.html">
+         E-book<br>Publisher
+        </a>
+        
+          <ul class="nav navbar-nav">
+           <li class="nav-item">
+            <a class="nav-link" href="index.html" style="color: white">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="browse.html" style="color: white">Browse</a>
+          </li> 
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="***" style="color: white">About</a>
+          </li> -->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                User
+              </a>
+              <div class="dropdown-menu "  aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="upload.html">Upload eBook</a>
+                <a class="dropdown-item" href="login.html">Login</a>
+                <a class="dropdown-item" href="***">Log Out</a>
+                <!-- <a class="dropdown-item" href="***">Others</a> -->
+            </li>
+         
+            </li>
+          </ul>
+          
+        </div>
+      </nav>    
+
+<!--Upload form-->  
+<div class="form-container upload-container">
+<form action="" method="post" enctype="multipart/form-data">
+  <div class="form-row">
+     <div class="col">       <!--input-group row mb-3 form group align-items-center col-7-->
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" aria-describedby="username" required>
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class=" col">
+      <label for="bookname" class="form-label">Book Title</label>
+      <input type="text" class="form-control" id="bookname" required>
+    </div>
+  </div>
+    
+    <div class="form-group mt-2">    <!--col-7 space-top input-group-->
+        <label for="b_file" class="mr-2 form-label">Book file(.pdf)</label>  <!--form-label-->
+        <input class="form-control " type="file" id="b_file" required>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="b_cover" class="mr-2 form-label">Book cover image(.png/jpeg)</label>
+        <input class="form-control" type="file" id="b_cover" required>
+      </div>
+    
+
+      <div class="col-7  space-top ">
+        <label for="book-category" class="form-label">Book category</label>
+      <select class="custom-select mb-3 col-7 " data-live-search="true" aria-label="category select" id="book-category"  required>   <!--form-select -->
+        <option selected value="">Select a category</option> 
+        <option value="action&adventure">Action & Adventure</option>
+        <option value="biography&autobiography">Biography & Autobiography</option>
+        <option value="classics">Classics</option>
+        <option value="comics">Comics / Visual storytelling</option>
+        <option value="cookbook">Cookbook</option>
+        <option value="crime&mystery">Crime & Mystery</option>
+        <option value="drama">Drama</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="horror">Horror</option>
+        <option value="humour&satire">Humour & Satire</option>
+        <option value="poetry">Poetry</option>
+        <option value="romance">Romance</option>
+        <option value="sci-fi">Science Fiction/Sci-Fi</option>
+        <option value="self-help">Self Help</option>
+        <option value="short-story">Short Story</option>
+        <option value="thriller">Thriller</option>
+      </select>
+    </div>
+
+     <button type="submit">Upload</button>  
+  </form>
+</div>
+
+<?php
+$server = 'localhost';
+$user = "root";
+$password = "";
+$dbname = "e-books";
+$conn = mysqli_connect($server, $user, $password, $dbname) or die("could not connect to the database");
+?>
+
+
+
+       <!--Footer-->
+  <footer>
+    <div class="content">
+      <p>Copyright &copy; 2023</p>
+      
+    </div>
+  </footer>
+      
+    <!--Optional JavaScript -->
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+   </body>
+</html>
+
+
